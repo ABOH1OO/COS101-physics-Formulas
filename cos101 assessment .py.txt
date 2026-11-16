@@ -1,0 +1,101 @@
+    # COS 101 ASSESSMENT
+# PHYSICS CALCULATOR
+
+# FUNCTION 1: SPEED
+def speed():
+    distance = float(input("Enter distance (metres): "))
+    time = float(input("Enter time (seconds): "))
+
+    if time != 0:
+        result = distance / time
+        print("Speed =", result, "m/s")
+    else:
+        print("Time cannot be zero")
+
+
+# FUNCTION 2: FORCE
+def force():
+    mass = float(input("Enter mass (kg): "))
+    acceleration = float(input("Enter acceleration (m/s2): "))
+
+    result = mass * acceleration
+    print("Force =", result, "Newtons")
+
+
+# FUNCTION 3: DENSITY
+def density():
+    mass = float(input("Enter mass (kg): "))
+    volume = float(input("Enter volume (m3): "))
+
+    if volume != 0:
+        result = mass / volume
+        print("Density =", result, "kg/m3")
+    else:
+        print("Volume cannot be zero")
+
+
+# FUNCTION 4: ACCELERATION
+def acceleration():
+    final_velocity = float(input("Enter final velocity: "))
+    initial_velocity = float(input("Enter initial velocity: "))
+    time = float(input("Enter time (seconds): "))
+
+    if time != 0:
+        result = (final_velocity - initial_velocity) / time
+        print("Acceleration =", result, "m/s2")
+    else:
+        print("Time cannot be zero")
+
+
+# FUNCTION 5: WEIGHT
+def weight():
+    mass = float(input("Enter mass (kg): "))
+    gravity = 9.8
+
+    result = mass * gravity
+    print("Weight =", result, "Newtons")
+
+
+# LIST OF OPERATIONS
+operations = [
+    "Speed",
+    "Force",
+    "Density",
+    "Acceleration",
+    "Weight",
+    "Exit"
+]
+
+
+# MAIN PROGRAM USING WHILE LOOP
+while True:
+
+    print("\n===== PHYSICS CALCULATOR =====")
+
+    # FOR LOOP TO DISPLAY MENU
+    for number, operation in enumerate(operations, 1):
+        print(number, ".", operation)
+
+    choice = input("Choose an operation (1-6): ")
+
+    if choice == "1":
+        speed()
+
+    elif choice == "2":
+        force()
+
+    elif choice == "3":
+        density()
+
+    elif choice == "4":
+        acceleration()
+
+    elif choice == "5":
+        weight()
+
+    elif choice == "6":
+        print("Thank you for using the Physics Calculator!")
+        break
+
+    else:
+        print("Invalid choice. Please try again.")
